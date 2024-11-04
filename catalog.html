@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - HoopGear</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/catalog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="HoopGear Logo">
+            <span>HoopGear</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="delivery.html">Доставка</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="favorites.html"><i class="fas fa-heart"></i></a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            <a href="account.html"><i class="fas fa-user"></i></a>
+        </div>
+    </header>
+
+    <main class="catalog-container">
+        <aside class="filters">
+            <h2>Фильтры</h2>
+            <div class="filter-section">
+                <h3>Категории</h3>
+                <ul>
+                    <li><input type="checkbox" id="balls"> <label for="balls">Мячи</label></li>
+                    <li><input type="checkbox" id="shoes"> <label for="shoes">Обувь</label></li>
+                    <li><input type="checkbox" id="clothing"> <label for="clothing">Одежда</label></li>
+                    <li><input type="checkbox" id="accessories"> <label for="accessories">Аксессуары</label></li>
+                </ul>
+            </div>
+
+            <div class="filter-section">
+                <h3>Цена</h3>
+                <div class="price-range">
+                    <input type="number" placeholder="От" min="0">
+                    <input type="number" placeholder="До" min="0">
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Бренды</h3>
+                <ul>
+                    <li><input type="checkbox" id="nike"> <label for="nike">Nike</label></li>
+                    <li><input type="checkbox" id="adidas"> <label for="adidas">Adidas</label></li>
+                    <li><input type="checkbox" id="jordan"> <label for="jordan">Jordan</label></li>
+                    <li><input type="checkbox" id="under-armour"> <label for="under-armour">Under Armour</label></li>
+                </ul>
+            </div>
+
+            <button class="apply-filters">Применить фильтры</button>
+        </aside>
+
+        <section class="products">
+            <div class="catalog-header">
+                <h1>Каталог товаров</h1>
+                <div class="sorting">
+                    <select>
+                        <option>По популярности</option>
+                        <option>Сначала дешевые</option>
+                        <option>Сначала дорогие</option>
+                        <option>По новизне</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <!-- Пример карточки товара -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/ball1.webp" alt="Баскетбольный мяч">
+                        <button class="favorite-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Баскетбольный мяч Li-ning</h3>
+                        <p class="price">5 990 ₽</p>
+                        <button class="add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <!-- Больше карточек товаров -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/shoes1.webp" alt="Кеды">
+                        <button class="favorite-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Кеды Adidas MIDCITY LOW</h3>
+                        <p class="price"> 4 990 ₽</p>
+                        <button class="add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/clothes1.webp" alt="Одежда">
+                        <button class="favorite-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Майка спортивная Under Armour BASELINE COTTON TANK</h3>
+                        <p class="price">4 399 ₽</p>
+                        <button class="add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/accessories1.webp" alt="Напульсники">
+                        <button class="favorite-btn"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Напульсники Nike Elite</h3>
+                        <p class="price">1 290 ₽</p>
+                        <button class="add-to-cart">В корзину</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+                <span class="page-number active">1</span>
+                <span class="page-number">2</span>
+                <span class="page-number">3</span>
+                <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О нас</h3>
+                <p>HoopGear - ваш надежный партнер в мире баскетбола</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>Email: info@hoopgear.ru</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+            </div>
+            <div class="footer-section">
+                <h3>Следите за нами</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

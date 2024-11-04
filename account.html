@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="HoopGear Logo">
+            <span>HoopGear</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="delivery.html">Доставка</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="favorites.html"><i class="fas fa-heart"></i></a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            <a href="account.html"><i class="fas fa-user"></i></a>
+        </div>
+    </header>
+    <main class="profile-container">
+        <!-- Секция для неавторизованных пользователей -->
+        <div class="auth-section" id="authSection">
+            <h1>Личный кабинет</h1>
+            <p class="auth-message">Войдите или зарегистрируйтесь, чтобы получить доступ к личному кабинету</p>
+            
+            <div class="auth-buttons">
+                <button class="login-btn" onclick="showLoginForm()">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Войти
+                </button>
+                <button class="register-btn" onclick="showRegisterForm()">
+                    <i class="fas fa-user-plus"></i>
+                    Регистрация
+                </button>
+            </div>
+    
+            <!-- Форма входа -->
+            <div class="auth-form login-form" id="loginForm" style="display: none;">
+                <h2>Вход в аккаунт</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Войти</button>
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Форма регистрации -->
+            <div class="auth-form register-form" id="registerForm" style="display: none;">
+                <h2>Регистрация</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="regName">Имя</label>
+                        <input type="text" id="regName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Пароль</label>
+                        <input type="password" id="regPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPasswordConfirm">Подтвердите пароль</label>
+                        <input type="password" id="regPasswordConfirm" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Секция для авторизованных пользователей -->
+        <div class="profile-content" id="profileContent">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="images/holder.png" alt="Фото профиля">
+                    <button class="change-avatar-btn"><i class="fas fa-camera"></i></button>
+                </div>
+                <h1>Иван Иванов</h1>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>Личные данные</h2>
+                    <form class="profile-form">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" value="Иван" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="surname">Фамилия</label>
+                            <input type="text" id="surname" value="Иванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="ivan@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" value="+7 (999) 123-45-67">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Адрес доставки</h2>
+                    <form class="profile-form">
+                        <div class="form-group">
+                            <label for="city">Город</label>
+                            <input type="text" id="city" value="Москва">
+                        </div>
+                        <div class="form-group">
+                            <label for="street">Улица</label>
+                            <input type="text" id="street" value="Пушкина">
+                        </div>
+                        <div class="form-group">
+                            <label for="house">Дом</label>
+                            <input type="text" id="house" value="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="apartment">Квартира</label>
+                            <input type="text" id="apartment" value="42">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="profile-section">
+                    <h2>История заказов</h2>
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-number">Заказ #1234</span>
+                                <span class="order-date">01.04.2024</span>
+                                <span class="order-status">Доставлен</span>
+                            </div>
+                            <div class="order-details">
+                                <p>Сумма: 12 999 ₽</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="save-btn">Сохранить изменения</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О нас</h3>
+                <p>HoopGear - ваш надежный партнер в мире баскетбола</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>Email: info@hoopgear.ru</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+            </div>
+            <div class="footer-section">
+                <h3>Следите за нами</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function showLoginForm() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+        }
+        
+        function showRegisterForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+        </script>
+</body>
+</html>
