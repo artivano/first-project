@@ -1,0 +1,207 @@
+.success-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.success-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+.success-icon {
+    color: #4CAF50;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.success-content h1 {
+    color: #2D2D2D;
+    margin-bottom: 0.5rem;
+}
+
+.order-number {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.order-number span {
+    font-weight: bold;
+}
+
+/* Стили для деталей заказа */
+.order-details {
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.detail-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.order-items {
+    margin-bottom: 1.5rem;
+}
+
+.order-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-size: 0.9rem;
+}
+
+.item-price {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Стили для итогов */
+.order-summary {
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ddd;
+}
+
+/* Стили для информации о доставке */
+.delivery-info p {
+    margin-bottom: 0.5rem;
+}
+
+.address-details,
+.pickup-details {
+    color: var(--secondary-color);
+    margin-left: 1rem;
+}
+
+/* Стили для способа оплаты */
+.payment-method {
+    margin-bottom: 0.5rem;
+}
+
+.payment-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.payment-status.paid {
+    background-color: #E8F5E9;
+    color: #4CAF50;
+}
+
+.payment-status.pending {
+    background-color: #FFF3E0;
+    color: #FF9800;
+}
+
+/* Стили для следующих шагов */
+.next-steps {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+}
+
+.next-steps p {
+    margin-bottom: 0.5rem;
+}
+
+.next-steps a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Стили для кнопок действий */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.continue-shopping,
+.download-receipt {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.continue-shopping {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.download-receipt {
+    background-color: #F5F5F5;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .success-container {
+        padding: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .continue-shopping,
+    .download-receipt {
+        width: 100%;
+        text-align: center;
+    }
+} 
